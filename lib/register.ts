@@ -1,6 +1,6 @@
 import axios from 'axios';
 import regexpMap from './regexp';
-interface User{
+export interface User{
     username:string;
     passwordSHA256:string;
     inviteCode:string;
@@ -8,7 +8,7 @@ interface User{
     gender?:string;
     birthDate?:Date;
 }
-interface Response{
+export interface Response{
     status:
         'Success'| //注册成功
         'Invalid'| //注册信息非法
@@ -16,12 +16,16 @@ interface Response{
         'Unexpected Error'; //意料之外的错误
     userID:number;
 }
-function validate(user:User):boolean{
-    return 
+export function validate(user:User):boolean{
+    return (
         regexpMap.username.regexp.test(user.username)&&
-        regexpMap.nickname.regexp.test(user.nickname);
+        (user.nickname?regexpMap.nickname.regexp.test(user.nickname):true)
+    );
 }
-function register(user:User,path:string,errHandler:(isResponseErr:boolean,err)=>void,successHandler:(response:Response)=>void){
+export function register(user:User,path:string,errHandler:(isResponseErr:boolean,err:any)=>void,successHandler:(response:Response)=>void){
+    if(!validate(user)){
+        errHandler(false,'Invalid value');
+    }
     axios.post(path,user).then((res) => {
         const response:Response = res.data;
         if(response.status !== 'Success'){
