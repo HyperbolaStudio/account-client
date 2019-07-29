@@ -4,7 +4,7 @@ export interface RegisterRequest{
     inviteCode:string;
     nickname?:string;
     gender?:string;
-    birthDate?:Date;
+    birthDate?:number[];
 }
 export interface RegisterResponse{
     status:

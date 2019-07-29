@@ -8,18 +8,18 @@ export function validate(user:User):boolean{
         (user.nickname?regexpMap.nickname.regexp.test(user.nickname):true)
     );
 }
-export function register(user:User,path:string,errHandler:(isResponseErr:boolean,err:any)=>void,successHandler:(response:Response)=>void){
+export function register(user:User,path:string,handler:(err:Error|null,request:User,response:Response|null)=>void){
     if(!validate(user)){
-        errHandler(false,'Invalid value');
+        handler(new Error('Invalid Value.'),user,null);
     }
     axios.post(path,user).then((res) => {
         const response:Response = res.data;
         if(response.status !== 'Success'){
-            errHandler(true,response);
+            handler(new Error(response.status),user,response);
         }else{
-            successHandler(response);
+            handler(null,user,response);
         }
     }).catch((err)=>{
-        errHandler(false,err);
+        handler(new Error(err),user,null);
     });
 }
