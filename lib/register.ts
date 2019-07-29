@@ -1,21 +1,7 @@
 import axios from 'axios';
-import regexpMap from './regexp';
-export interface User{
-    username:string;
-    passwordSHA256:string;
-    inviteCode:string;
-    nickname?:string;
-    gender?:string;
-    birthDate?:Date;
-}
-export interface Response{
-    status:
-        'Success'| //注册成功
-        'Invalid'| //注册信息非法
-        'User Already Registered'| //用户已注册
-        'Unexpected Error'; //意料之外的错误
-    userID:number;
-}
+import {user as regexpMap} from './regexp';
+import {RegisterRequest as User,RegisterResponse as Response} from './declarations';
+
 export function validate(user:User):boolean{
     return (
         regexpMap.username.regexp.test(user.username)&&

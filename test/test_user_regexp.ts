@@ -1,4 +1,5 @@
-import {validate as v,User} from './register';
+import {validate as v} from '../lib/register';
+import {RegisterRequest as User} from '../lib/declarations';
 const users = [{
     username:'aaa_bbb',
     nickname:'aaa_bbb',

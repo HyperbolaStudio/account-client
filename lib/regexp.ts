@@ -8,7 +8,7 @@ interface RegExpMap{
         }
     }
 }
-const obj:RegExpMap = {
+const user:RegExpMap = {
     username:{
         regexp:/^\w+$/,
         description:{
@@ -24,4 +24,4 @@ const obj:RegExpMap = {
         }
     }
 }
-export default obj;
+export {user};
