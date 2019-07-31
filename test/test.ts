@@ -1,1 +1,1 @@
-import './test_user_regexp'
+import './reg_test'

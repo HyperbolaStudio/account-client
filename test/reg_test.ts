@@ -5,12 +5,11 @@ let r:RegisterRequest[] = [{
     nickname:'van',
     passwordSHA256:'11',
     inviteCode:'11',
-},{
-    username:'bab',
+},({
     nickname:'新日暮里',
     passwordSHA256:'22',
     inviteCode:'33',
-},{
+} as RegisterRequest),{
     username:'\' OR 1=1;drop database users --',
     nickname:'iuasd7',
     passwordSHA256:'ouiadji',
@@ -29,8 +28,7 @@ let r:RegisterRequest[] = [{
 for(let x of r){
     register(x,'http://localhost:3000/register',(err,user,res)=>{
         if(err){
-            console.log(user,res);
-            throw err;
+            console.log(err,user,res);
         }
         console.log(user,res);
     })

@@ -11,6 +11,7 @@ export function validate(user:User):boolean{
 export function register(user:User,path:string,handler:(err:Error|null,request:User,response:Response|null)=>void){
     if(!validate(user)){
         handler(new Error('Invalid Value.'),user,null);
+        return;
     }
     axios.post(path,user).then((res) => {
         const response:Response = res.data;

@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./test/reg_test.ts");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./test/test.ts");
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -336,18 +336,19 @@ function validate(user) {
 exports.validate = validate;
 function register(user, path, handler) {
     if (!validate(user)) {
-        handler(new Error('Invalid Value.'), null);
+        handler(new Error('Invalid Value.'), user, null);
+        return;
     }
     axios_1.default.post(path, user).then(function (res) {
         var response = res.data;
         if (response.status !== 'Success') {
-            handler(new Error(response.status), response);
+            handler(new Error(response.status), user, response);
         }
         else {
-            handler(null, response);
+            handler(null, user, response);
         }
     }).catch(function (err) {
-        handler(new Error(err), null);
+        handler(new Error(err), user, null);
     });
 }
 exports.register = register;
@@ -2137,7 +2138,6 @@ var r = [{
         passwordSHA256: '11',
         inviteCode: '11',
     }, {
-        username: 'bab',
         nickname: '新日暮里',
         passwordSHA256: '22',
         inviteCode: '33',
@@ -2159,17 +2159,30 @@ var r = [{
     }];
 for (var _i = 0, r_1 = r; _i < r_1.length; _i++) {
     var x = r_1[_i];
-    register_1.register(x, 'http://localhost:3000/register', function (err, res) {
+    register_1.register(x, 'http://localhost:3000/register', function (err, user, res) {
         if (err) {
-            console.log(res);
-            throw err;
+            console.log(err, user, res);
         }
-        console.log(res);
+        console.log(user, res);
     });
 }
+
+
+/***/ }),
+
+/***/ "./test/test.ts":
+/*!**********************!*\
+  !*** ./test/test.ts ***!
+  \**********************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+__webpack_require__(/*! ./reg_test */ "./test/reg_test.ts");
 
 
 /***/ })
 
 /******/ });
-//# sourceMappingURL=bundle.js.map
