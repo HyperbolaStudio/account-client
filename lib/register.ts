@@ -1,7 +1,6 @@
 import axios from 'axios';
 import {user as regexpMap} from './regexp';
 import {RegisterRequest as User,RegisterResponse as Response} from './declarations';
-
 export function validate(user:User):boolean{
     return (
         regexpMap.username.regexp.test(user.username)&&
