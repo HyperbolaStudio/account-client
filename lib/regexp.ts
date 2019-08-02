@@ -22,6 +22,14 @@ const user:RegExpMap = {
             zh_Hans:'由大小写拉丁字母，阿拉伯数字,下划线或其他非ASCII字符构成',
             en:'Composed of uppercase and lowercase Latin letters, Arabic numbers, underscores or other non-ASCII characters'
         }
+    },
+    passwordSHA256:{
+        regexp:/^([0-9]|[a-f]){64}$/,
+        description:{},
+    },
+    inviteCode:{
+        regexp:/^([0-9]|[a-f]){16}$/,
+        description:{},
     }
 }
 export {user};
