@@ -28,9 +28,17 @@ let r:RegisterRequest[] = [{
     username:'123',
     nickname:'123',
     passwordSHA256:'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3',
-    inviteCode:'2e5f9d350126cc56',
+    inviteCode:'a35bca97f2d5baa6',
     birthDate:[2017,1,23],
     gender:'male',
+
+},{
+    username:'456',
+    nickname:'123',
+    passwordSHA256:'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3',
+    inviteCode:'7afaafe6c3c613da',
+    birthDate:[2017,1,23],
+    gender:'female',
 
 }]
 for(let x of r){

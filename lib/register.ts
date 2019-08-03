@@ -16,6 +16,7 @@ export function register(
             reject(new Error('Invalid value'));
             return;
         }
+        axios.defaults.withCredentials = true;
         axios.post(path,user).then((res) => {
             const response:Response = res.data;
             if(response.status !== 'Success'){

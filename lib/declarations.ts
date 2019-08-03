@@ -37,3 +37,13 @@ export interface UserInfoDB{
     gender:number;
     birthdate:Date;
 }
+export interface FollowRequest{
+    targetID:number;
+}
+export interface FollowResponse{
+    status:
+        'Success'|//关注成功
+        'Invalid'|
+        'Not Logged In'|//未登录
+        'Unexpected Error';//意料之外的错误
+}
