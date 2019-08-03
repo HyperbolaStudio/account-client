@@ -44,6 +44,15 @@ export interface FollowResponse{
     status:
         'Success'|//关注成功
         'Invalid'|
+        'Target User Not Exist'|
         'Not Logged In'|//未登录
         'Unexpected Error';//意料之外的错误
+}
+export type GetFollowListRequest = void;
+export interface GetFollowListResponse{
+    status:
+        'Success'|
+        'Not Logged In'|
+        'Unexpected Error';
+    list:number[];
 }
