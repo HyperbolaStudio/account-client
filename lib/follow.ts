@@ -5,7 +5,6 @@ export function follow(
     path:string
 ):Promise<FollowResponse>{
     return new Promise((resolve,reject)=>{
-        axios.defaults.withCredentials = true;
         axios.post(path,req).then((res)=>{
             const response:FollowResponse = res.data;
             if(response.status!='Success'){

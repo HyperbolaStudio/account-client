@@ -36,6 +36,7 @@ export interface UserInfoDB{
     nickname:string;
     gender:number;
     birthdate:Date;
+    regtime:Date;
 }
 export interface FollowRequest{
     targetID:number;
@@ -48,11 +49,22 @@ export interface FollowResponse{
         'Not Logged In'|//未登录
         'Unexpected Error';//意料之外的错误
 }
-export type GetFollowListRequest = void;
+export interface GetFollowListRequest{
+    offset:number;
+    amount:number;
+}
 export interface GetFollowListResponse{
     status:
         'Success'|
         'Not Logged In'|
+        'Invalid'|
         'Unexpected Error';
     list:number[];
+}
+export interface GetFollowAmountResponse{
+    status:
+        'Success'|
+        'Not Logged In'|
+        'Unexpected Error';
+    amount:number;
 }

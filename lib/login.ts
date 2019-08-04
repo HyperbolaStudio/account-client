@@ -19,7 +19,6 @@ export function login(
             reject(new Error('Invalid value'));
             return;
         }
-        axios.defaults.withCredentials = true;
         axios.post(path,req).then((res)=>{
             const response:LoginResponse = res.data;
             if(response.status !== 'Success'){
