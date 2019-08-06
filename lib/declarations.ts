@@ -1,3 +1,8 @@
+export interface AbstractResponse{
+    status:string;
+}
+
+/****** register *******/
 export interface RegisterRequest{
     username:string;
     passwordSHA256:string;
@@ -6,7 +11,10 @@ export interface RegisterRequest{
     gender?:string;
     birthDate?:number[];
 }
-export interface RegisterResponse{
+export type UnValidatedRegisterRequest = {
+    [P in keyof RegisterRequest]?:RegisterRequest[P];
+}
+export interface RegisterResponse extends AbstractResponse{
     status:
         'Success'| //注册成功
         'Invalid'| //注册信息非法
@@ -14,12 +22,17 @@ export interface RegisterResponse{
         'Unexpected Error'; //意料之外的错误
     userID:number;
 }
+
+/****** login *******/
 export interface LoginRequest{
     loginName:string|number;
     loginType:number; //1: username, 2: userid
     passwordSHA256:string;
 }
-export interface LoginResponse{
+export type UnValidatedLoginRequest = {
+    [P in keyof LoginRequest]?:LoginRequest[P];
+}
+export interface LoginResponse extends AbstractResponse{
     status:
         'Success'| //登录成功
         'Failed'| //登录失败
@@ -28,7 +41,8 @@ export interface LoginResponse{
         'Unexpected Error'; //意料之外的错误
     sessionID:string;
 }
-export type ResponseHandler<Req,Res> = (err:Error|null,request:Req,response:Res|null)=>void;
+
+/****** user info *******/
 export interface UserInfoDB{
     userid:number;
     username:string;
@@ -38,10 +52,15 @@ export interface UserInfoDB{
     birthdate:Date;
     regtime:Date;
 }
+
+/****** follow *******/
 export interface FollowRequest{
     targetID:number;
 }
-export interface FollowResponse{
+export type UnValidatedFollowRequest = {
+    [P in keyof FollowRequest]?:FollowRequest[P]
+}
+export interface FollowResponse extends AbstractResponse{
     status:
         'Success'|//关注成功
         'Invalid'|
@@ -49,11 +68,16 @@ export interface FollowResponse{
         'Not Logged In'|//未登录
         'Unexpected Error';//意料之外的错误
 }
+
+/****** follow list *******/
 export interface GetFollowListRequest{
     offset:number;
     amount:number;
 }
-export interface GetFollowListResponse{
+export type UnValidatedGetFollowListRequest = {
+    [P in keyof GetFollowListRequest]?:GetFollowListRequest[P];
+}
+export interface GetFollowListResponse extends AbstractResponse{
     status:
         'Success'|
         'Not Logged In'|
@@ -61,7 +85,9 @@ export interface GetFollowListResponse{
         'Unexpected Error';
     list:number[];
 }
-export interface GetFollowAmountResponse{
+
+/****** follow amount *******/
+export interface GetFollowAmountResponse extends AbstractResponse{
     status:
         'Success'|
         'Not Logged In'|

@@ -1,37 +1,26 @@
 import axios from 'axios';
-import {FollowRequest,FollowResponse} from './declarations';
+import {FollowRequest,UnValidatedFollowRequest as UnValidatedFollowRequest,FollowResponse, GetFollowListRequest, GetFollowListResponse, UnValidatedGetFollowListRequest, GetFollowAmountResponse} from './declarations';
+import { accessor } from './accessor';
+export function followValidate(req:UnValidatedFollowRequest):req is FollowRequest{
+    return typeof(req.targetID) == 'number';
+}
+export function qFollowListValidate(req:UnValidatedGetFollowListRequest):req is GetFollowListRequest{
+    return typeof(req.amount) == 'number' && typeof(req.offset) == 'number';
+}
 export function follow(
     req:FollowRequest,
     path:string
 ):Promise<FollowResponse>{
-    return new Promise((resolve,reject)=>{
-        axios.post(path,req).then((res)=>{
-            const response:FollowResponse = res.data;
-            if(response.status!='Success'){
-                reject(new Error(response.status));
-            }else{
-                resolve(response);
-            }
-        }).catch((err)=>{
-            reject(err);
-        })
-    })
+    return accessor<FollowRequest,FollowResponse>(req,path,followValidate);
 }
-export function unfollow(
-    req:FollowRequest,
+export function queryFollowList(
+    req:GetFollowListRequest,
     path:string
-):Promise<FollowResponse>{
-    return new Promise((resolve,reject)=>{
-        axios.defaults.withCredentials = true;
-        axios.post(path,req).then((res)=>{
-            const response:FollowResponse = res.data;
-            if(response.status!='Success'){
-                reject(new Error(response.status));
-            }else{
-                resolve(response);
-            }
-        }).catch((err)=>{
-            reject(err);
-        })
-    })
+):Promise<GetFollowListResponse>{
+    return accessor<GetFollowListRequest,GetFollowListResponse>(req,path,qFollowListValidate);
+}
+export function queryFollowAmount(
+    path:string
+):Promise<GetFollowAmountResponse>{
+    return accessor<void,GetFollowAmountResponse>(undefined,path);
 }

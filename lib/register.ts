@@ -1,30 +1,18 @@
-import axios from 'axios';
 import {user as regexpMap} from './regexp';
-import {RegisterRequest as User,RegisterResponse as Response, ResponseHandler} from './declarations';
-export function validate(user:User):boolean{
-    return (
+import {RegisterRequest,RegisterResponse,UnValidatedRegisterRequest} from './declarations';
+import { accessor } from './accessor';
+export function validate(user:UnValidatedRegisterRequest):user is RegisterRequest{
+    return Boolean(
+        user.username && user.passwordSHA256 && user.inviteCode &&
         regexpMap.username.regexp.test(user.username)&&
-        (user.nickname?regexpMap.nickname.regexp.test(user.nickname):true)
+        (user.nickname?regexpMap.nickname.regexp.test(user.nickname):true)&&
+        regexpMap.passwordSHA256.regexp.test(user.passwordSHA256)&&
+        regexpMap.inviteCode.regexp.test(user.inviteCode)
     );
 }
 export function register(
-    user:User,
+    user:RegisterRequest,
     path:string,
-):Promise<Response>{
-    return new Promise((resolve,reject)=>{
-        if(!validate(user)){
-            reject(new Error('Invalid value'));
-            return;
-        }
-        axios.post(path,user).then((res) => {
-            const response:Response = res.data;
-            if(response.status !== 'Success'){
-                reject(new Error(response.status));
-            }else{
-                resolve(response);
-            }
-        }).catch((err)=>{
-            reject(err);
-        });
-    })
+):Promise<RegisterResponse>{
+    return accessor<RegisterRequest,RegisterResponse>(user,path,validate);
 }

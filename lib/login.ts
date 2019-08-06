@@ -1,33 +1,22 @@
-import axios from 'axios';
 import {user} from './regexp';
-import {LoginRequest,LoginResponse, ResponseHandler} from './declarations';
-export function validate(req:LoginRequest):boolean{
+import {LoginRequest,LoginResponse,UnValidatedLoginRequest} from './declarations';
+import { accessor } from './accessor';
+export function validate(req:UnValidatedLoginRequest):req is LoginRequest{
+    if(!req.loginName || !req.loginType || !req.passwordSHA256){
+        return false;
+    }
+    let ret = false;
     if(req.loginType == 1){
-        return user.username.regexp.test(req.loginName as string);
+        ret = user.username.regexp.test(req.loginName as string);
     }
     if(req.loginType == 2){
-        return typeof req.loginName == 'number';
+        ret = typeof req.loginName == 'number';
     }
-    return false;
+    return ret && user.passwordSHA256.regexp.test(req.passwordSHA256);
 }
 export function login(
     req:LoginRequest,
     path:string,
 ):Promise<LoginResponse>{
-    return new Promise((resolve,reject)=>{
-        if(!validate(req)){
-            reject(new Error('Invalid value'));
-            return;
-        }
-        axios.post(path,req).then((res)=>{
-            const response:LoginResponse = res.data;
-            if(response.status !== 'Success'){
-                reject(new Error(response.status));
-            }else{
-                resolve(response);
-            }
-        }).catch((err)=>{
-            reject(err);
-        });
-    })
+    return accessor<LoginRequest,LoginResponse>(req,path,validate);
 }
