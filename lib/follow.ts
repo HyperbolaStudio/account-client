@@ -1,10 +1,10 @@
 import axios from 'axios';
-import {FollowRequest,UnValidatedFollowRequest as UnValidatedFollowRequest,FollowResponse, GetFollowListRequest, GetFollowListResponse, UnValidatedGetFollowListRequest, GetFollowAmountResponse} from './declarations';
+import {FollowRequest,UnValidated,FollowResponse, GetFollowListRequest, GetFollowListResponse, GetFollowAmountResponse} from './declarations';
 import { accessor } from './accessor';
-export function followValidate(req:UnValidatedFollowRequest):req is FollowRequest{
+export function followValidate(req:UnValidated<FollowRequest>):req is FollowRequest{
     return typeof(req.targetID) == 'number';
 }
-export function qFollowListValidate(req:UnValidatedGetFollowListRequest):req is GetFollowListRequest{
+export function qFollowListValidate(req:UnValidated<GetFollowListRequest>):req is GetFollowListRequest{
     return typeof(req.amount) == 'number' && typeof(req.offset) == 'number';
 }
 export function follow(

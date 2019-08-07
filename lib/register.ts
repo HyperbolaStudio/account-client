@@ -1,7 +1,7 @@
 import {user as regexpMap} from './regexp';
-import {RegisterRequest,RegisterResponse,UnValidatedRegisterRequest} from './declarations';
+import {RegisterRequest,RegisterResponse,UnValidated} from './declarations';
 import { accessor } from './accessor';
-export function validate(user:UnValidatedRegisterRequest):user is RegisterRequest{
+export function validate(user:UnValidated<RegisterRequest>):user is RegisterRequest{
     return Boolean(
         user.username && user.passwordSHA256 && user.inviteCode &&
         regexpMap.username.regexp.test(user.username)&&
