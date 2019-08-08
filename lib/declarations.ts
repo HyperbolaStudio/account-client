@@ -50,8 +50,8 @@ export interface UserInfoDB{
     passwordSHA256:string;
     nickname:string;
     gender:number;
-    birthdate:Date;
-    regTime:Date;
+    birthdate?:Date;
+    regtime:Date;
 }
 
 /****** follow *******/
@@ -103,7 +103,7 @@ export interface QueryUserResponse{
         username:string;
         userID:number;
         gender:string;
-        birthdate:number[];
+        birthdate?:number[];
         nickname:string;
         regTime:number;
     }
