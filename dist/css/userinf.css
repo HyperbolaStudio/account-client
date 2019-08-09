@@ -1,0 +1,9 @@
+#main-div{
+    display:flex;
+    align-items:center;
+}
+#avatar{
+    border-radius: 2px;
+    height: 48px;
+    width: 48px;
+}
