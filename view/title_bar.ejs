@@ -1,0 +1,28 @@
+<header id="title-bar">
+    <div class="left-bar">
+        <div class="logo-block">
+            <img class="logo" src="<%= titleBar.logoSrc%>">
+        </div>
+        <h1><%= titleBar.title%></h1>
+        <nav class="main-nav">
+            <ul class="main-nav-ul">
+                <%for(let x of titleBar.navItems){%>
+                    <li>
+                        <a class="li-button" href="<%= x.href%>"><%= x.innerText%></a>
+                    </li>
+            </ul>
+        </nav>
+    </div>
+    <div id="right-bar">
+        <nav id="button-nav">
+            <div id="users-part">
+                <div id="register"><a href="/register">注册</a></div>
+                <div id="login"><a href="/login">登录</a></div>
+            </div>
+            <div id="loggedin-user-part">
+                <% include('./user_inf.ejs')%>
+                <div id="logout"><a>退出登录</a></div>
+            </div>
+        </nav>
+    </div>
+</header>

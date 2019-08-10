@@ -1,0 +1,17 @@
+a{
+    text-decoration-line: none;
+}
+a:hover{
+    text-decoration-line: underline;
+}
+a{
+    background-color: var(--back-color,black);
+    padding:0.5em 1em;
+    line-height: 2em;
+    color:var(--fore-color,white);
+    user-select:none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    border-radius: 0.25em;
+    cursor: pointer;
+}

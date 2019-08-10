@@ -1,3 +1,3 @@
 import axios from 'axios';
 axios.defaults.withCredentials = true;
-import '../view/titlebar';
+import '../view/index';

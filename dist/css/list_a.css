@@ -1,0 +1,9 @@
+a{
+    text-decoration-line: none;
+}
+a:hover{
+    text-decoration-line: underline;
+}
+a{
+    color:var(--fore-color,black);
+}

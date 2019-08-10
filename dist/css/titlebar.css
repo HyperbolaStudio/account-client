@@ -9,7 +9,7 @@
 #logo-img{
     height:48px;
 }
-#left-bar,#right-bar,#main-div,ul,#button-nav,#users-part{
+#left-bar,#right-bar,#main-div,ul,#button-nav,#users-part,#loggedin-user-part{
     display:flex;
 }
 ul>*:first-child{
@@ -18,7 +18,7 @@ ul>*:first-child{
 ul>*:last-child{
     margin-right:0;
 }
-#left-bar>*,#right-bar>*,ul>*,#users-part>*{
+#left-bar>*,#right-bar>*,ul>*,#users-part>*,#loggedin-user-part>*{
     margin:0 8px;
 }
 h1{
@@ -27,19 +27,4 @@ h1{
 ul{
     list-style-type: none;
     padding: 0;
-}
-a{
-    text-decoration-line: none;
-}
-a:hover{
-    text-decoration-line: underline;
-}
-li>a{
-    color:black;
-}
-div>a{
-    color:white;
-    padding:8px 32px;
-    background: #00a0e9;
-    border-radius: 4px;
 }

@@ -97,6 +97,30 @@ eval("// shim for using process in browser\nvar process = module.exports = {};\n
 
 /***/ }),
 
+/***/ "./lib/accessor.ts":
+/*!*************************!*\
+  !*** ./lib/accessor.ts ***!
+  \*************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nconst axios_1 = __importDefault(__webpack_require__(/*! axios */ \"./node_modules/_axios@0.19.0@axios/index.js\"));\r\nasync function accessor(req, path, validate = () => true) {\r\n    return new Promise((resolve, reject) => {\r\n        if (!validate(req)) {\r\n            reject(new Error('Invalid value'));\r\n            return;\r\n        }\r\n        axios_1.default.post(path, req).then((res) => {\r\n            const response = res.data;\r\n            if (response.status !== 'Success') {\r\n                reject(new Error(response.status));\r\n            }\r\n            else {\r\n                resolve(response);\r\n            }\r\n        }).catch((err) => {\r\n            reject(err);\r\n        });\r\n    });\r\n}\r\nexports.accessor = accessor;\r\n\n\n//# sourceURL=webpack:///./lib/accessor.ts?");
+
+/***/ }),
+
+/***/ "./lib/declarations.ts":
+/*!*****************************!*\
+  !*** ./lib/declarations.ts ***!
+  \*****************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.LOGIN_REQUEST_LOGIN_TYPE_USERNAME = 1;\r\nexports.LOGIN_REQUEST_LOGIN_TYPE_USERID = 2;\r\nexports.QUERY_USER_REQUEST_QUERY_COL_USERNAME = 1;\r\nexports.QUERY_USER_REQUEST_QUERY_COL_USERID = 2;\r\n\n\n//# sourceURL=webpack:///./lib/declarations.ts?");
+
+/***/ }),
+
 /***/ "./lib/index.ts":
 /*!**********************!*\
   !*** ./lib/index.ts ***!
@@ -105,7 +129,31 @@ eval("// shim for using process in browser\nvar process = module.exports = {};\n
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nconst axios_1 = __importDefault(__webpack_require__(/*! axios */ \"./node_modules/_axios@0.19.0@axios/index.js\"));\r\naxios_1.default.defaults.withCredentials = true;\r\n__webpack_require__(/*! ../view/titlebar */ \"./view/titlebar.ts\");\r\n\n\n//# sourceURL=webpack:///./lib/index.ts?");
+eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nconst axios_1 = __importDefault(__webpack_require__(/*! axios */ \"./node_modules/_axios@0.19.0@axios/index.js\"));\r\naxios_1.default.defaults.withCredentials = true;\r\n__webpack_require__(/*! ../view/index */ \"./view/index.ts\");\r\n\n\n//# sourceURL=webpack:///./lib/index.ts?");
+
+/***/ }),
+
+/***/ "./lib/query_user.ts":
+/*!***************************!*\
+  !*** ./lib/query_user.ts ***!
+  \***************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nconst declarations_1 = __webpack_require__(/*! ./declarations */ \"./lib/declarations.ts\");\r\nconst regexp_1 = __webpack_require__(/*! ./regexp */ \"./lib/regexp.ts\");\r\nconst accessor_1 = __webpack_require__(/*! ./accessor */ \"./lib/accessor.ts\");\r\nfunction validate(req) {\r\n    if (!req.queryName || !req.queryCol) {\r\n        return false;\r\n    }\r\n    if (req.queryCol == declarations_1.QUERY_USER_REQUEST_QUERY_COL_USERNAME) {\r\n        if (typeof (req.queryName) != 'string' || !regexp_1.user.username.regexp.test(req.queryName)) {\r\n            return false;\r\n        }\r\n    }\r\n    else if (req.queryCol == declarations_1.QUERY_USER_REQUEST_QUERY_COL_USERID) {\r\n        if (typeof (req.queryName) != 'number') {\r\n            return false;\r\n        }\r\n    }\r\n    else {\r\n        return false;\r\n    }\r\n    return true;\r\n}\r\nexports.validate = validate;\r\nfunction queryUser(req, path) {\r\n    return accessor_1.accessor(req, path, validate);\r\n}\r\nexports.queryUser = queryUser;\r\n\n\n//# sourceURL=webpack:///./lib/query_user.ts?");
+
+/***/ }),
+
+/***/ "./lib/regexp.ts":
+/*!***********************!*\
+  !*** ./lib/regexp.ts ***!
+  \***********************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nlet username_regexp = /^\\w+$/;\r\nlet nickname_regexp = /^(\\w|[\\u0080-\\uffff])+$/;\r\nconst user = {\r\n    username: {\r\n        regexp: /^\\w+$/,\r\n        description: {\r\n            zh_Hans: '由大小写拉丁字母，阿拉伯数字或下划线构成',\r\n            en: 'Composed of uppercase and lowercase Latin letters, Arabic numbers or underscores'\r\n        }\r\n    },\r\n    nickname: {\r\n        regexp: /^(\\w|[\\u0080-\\uffff]|[\\u0020])+$/,\r\n        description: {\r\n            zh_Hans: '由大小写拉丁字母，阿拉伯数字,下划线或其他非ASCII字符构成',\r\n            en: 'Composed of uppercase and lowercase Latin letters, Arabic numbers, underscores or other non-ASCII characters'\r\n        }\r\n    },\r\n    passwordSHA256: {\r\n        regexp: /^([0-9]|[a-f]){64}$/,\r\n        description: {},\r\n    },\r\n    inviteCode: {\r\n        regexp: /^([0-9]|[a-f]){16}$/,\r\n        description: {},\r\n    }\r\n};\r\nexports.user = user;\r\n\n\n//# sourceURL=webpack:///./lib/regexp.ts?");
 
 /***/ }),
 
@@ -419,6 +467,30 @@ eval("/*!\n * Determine if an object is a Buffer\n *\n * @author   Feross Aboukh
 
 /***/ }),
 
+/***/ "./view/button_like_a.ts":
+/*!*******************************!*\
+  !*** ./view/button_like_a.ts ***!
+  \*******************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nclass ButtonLikeA extends HTMLElement {\r\n    constructor() {\r\n        super();\r\n        this.link = document.createElement('link');\r\n        this.container = document.createElement('div');\r\n        this.a = document.createElement('a');\r\n        let shadow = this.attachShadow({ mode: 'open' });\r\n        this.link.rel = 'stylesheet';\r\n        shadow.appendChild(this.link);\r\n        shadow.appendChild(this.container);\r\n        this.container.appendChild(this.a);\r\n    }\r\n}\r\nexports.ButtonLikeA = ButtonLikeA;\r\nclass ListA extends ButtonLikeA {\r\n    constructor() {\r\n        super();\r\n        this.link.href = '/dist/css/list_a.css';\r\n    }\r\n}\r\nexports.ListA = ListA;\r\ncustomElements.define('l-a', ListA);\r\nclass ButtonA extends ButtonLikeA {\r\n    constructor() {\r\n        super();\r\n        this.link.href = '/dist/css/button_a.css';\r\n    }\r\n}\r\nexports.ButtonA = ButtonA;\r\ncustomElements.define('b-a', ButtonA);\r\n\n\n//# sourceURL=webpack:///./view/button_like_a.ts?");
+
+/***/ }),
+
+/***/ "./view/index.ts":
+/*!***********************!*\
+  !*** ./view/index.ts ***!
+  \***********************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\n__webpack_require__(/*! ./button_like_a */ \"./view/button_like_a.ts\");\r\n__webpack_require__(/*! ./userinf */ \"./view/userinf.ts\");\r\n__webpack_require__(/*! ./titlebar */ \"./view/titlebar.ts\");\r\n\n\n//# sourceURL=webpack:///./view/index.ts?");
+
+/***/ }),
+
 /***/ "./view/titlebar.ts":
 /*!**************************!*\
   !*** ./view/titlebar.ts ***!
@@ -427,7 +499,19 @@ eval("/*!\n * Determine if an object is a Buffer\n *\n * @author   Feross Aboukh
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nclass TitleBarElement extends HTMLElement {\r\n    constructor() {\r\n        super();\r\n        this.mainDiv = document.createElement('header');\r\n        this.leftBar = document.createElement('div');\r\n        this.logoBlock = document.createElement('div');\r\n        this.logoImg = document.createElement('img');\r\n        this.titleH1 = document.createElement('h1');\r\n        this.mainNav = document.createElement('nav');\r\n        this.mainNavUl = document.createElement('ul');\r\n        this.rightBar = document.createElement('div');\r\n        this.buttonNav = document.createElement('nav');\r\n        this.usersPart = document.createElement('div');\r\n        this.loginPart = document.createElement('user-inf');\r\n        this.navItems = [{\r\n                innerText: '主页',\r\n                id: 'homepage',\r\n                href: '/',\r\n            }, {\r\n                innerText: '动态',\r\n                id: 'trend',\r\n                href: '/trend',\r\n            }, {\r\n                innerText: '-1娘的破站',\r\n                id: 'nega1',\r\n                href: 'https://nega1.hyperbola.studio/',\r\n            }, {\r\n                innerText: '关于',\r\n                id: 'about',\r\n                href: '/about',\r\n            }];\r\n        this.userItems = [{\r\n                title: '登录',\r\n                id: 'login',\r\n                href: '/login',\r\n            }, {\r\n                title: '注册',\r\n                id: 'login',\r\n                href: '/register'\r\n            }];\r\n        let shadow = this.attachShadow({ mode: 'open' });\r\n        this.mainDiv.appendChild(this.leftBar);\r\n        this.mainDiv.appendChild(this.rightBar);\r\n        this.leftBar.appendChild(this.logoBlock);\r\n        this.leftBar.appendChild(this.titleH1);\r\n        this.leftBar.appendChild(this.mainNav);\r\n        this.logoBlock.appendChild(this.logoImg);\r\n        this.rightBar.appendChild(this.buttonNav);\r\n        this.buttonNav.appendChild(this.usersPart);\r\n        this.mainNav.appendChild(this.mainNavUl);\r\n        this.logoImg.src = '/assets/logo0.svg';\r\n        this.logoImg.id = 'logo-img';\r\n        this.logoBlock.id = 'logo-block';\r\n        this.mainNav.id = 'main-nav';\r\n        this.buttonNav.id = 'button-nav';\r\n        this.leftBar.id = 'left-bar';\r\n        this.rightBar.id = 'right-bar';\r\n        this.mainDiv.id = 'main-div';\r\n        this.mainNavUl.id = 'main-nav-ul';\r\n        this.buttonNav.id = 'button-nav';\r\n        this.usersPart.id = 'users-part';\r\n        let style = document.createElement('link');\r\n        style.rel = 'stylesheet';\r\n        style.href = '/dist/css/titlebar.css';\r\n        shadow.appendChild(style);\r\n        shadow.appendChild(this.mainDiv);\r\n        this.titleH1.innerText = '破站';\r\n        for (let x of this.navItems) {\r\n            let li = document.createElement('li');\r\n            let a = document.createElement('a');\r\n            a.innerText = x.innerText;\r\n            a.href = x.href;\r\n            li.id = x.id;\r\n            li.appendChild(a);\r\n            this.mainNavUl.appendChild(li);\r\n        }\r\n        for (let x of this.userItems) {\r\n            let li = document.createElement('div');\r\n            let a = document.createElement('a');\r\n            a.innerText = x.title;\r\n            a.href = x.href;\r\n            li.id = x.id;\r\n            li.appendChild(a);\r\n            this.usersPart.appendChild(li);\r\n        }\r\n    }\r\n    static get observedAttributes() {\r\n        return ['uid'];\r\n    }\r\n    attributeChangedCallback(name, oldVal, newVal) {\r\n        if (name == 'uid') {\r\n            if (this.getAttribute('uid')) {\r\n                this.usersPart.style.display = 'none';\r\n                this.loginPart.style.display = '';\r\n            }\r\n            else {\r\n                this.usersPart.style.display = '';\r\n                this.loginPart.style.display = 'none';\r\n            }\r\n        }\r\n    }\r\n}\r\nexports.TitleBarElement = TitleBarElement;\r\ncustomElements.define('title-bar', TitleBarElement);\r\n\n\n//# sourceURL=webpack:///./view/titlebar.ts?");
+eval("\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nclass TitleBarElement extends HTMLElement {\r\n    constructor() {\r\n        super();\r\n        this.mainDiv = document.createElement('header');\r\n        this.leftBar = document.createElement('div');\r\n        this.logoBlock = document.createElement('div');\r\n        this.logoImg = document.createElement('img');\r\n        this.titleH1 = document.createElement('h1');\r\n        this.mainNav = document.createElement('nav');\r\n        this.mainNavUl = document.createElement('ul');\r\n        this.rightBar = document.createElement('div');\r\n        this.buttonNav = document.createElement('nav');\r\n        this.usersPart = document.createElement('div');\r\n        this.loggedInUserPart = document.createElement('div');\r\n        this.loginPart = document.createElement('user-inf');\r\n        this.logoutButton = document.createElement('b-a');\r\n        this.navItems = [{\r\n                innerText: '主页',\r\n                id: 'homepage',\r\n                href: '/',\r\n            }, {\r\n                innerText: '动态',\r\n                id: 'trend',\r\n                href: '/trend',\r\n            }, {\r\n                innerText: '-1娘的破站',\r\n                id: 'nega1',\r\n                href: 'https://nega1.hyperbola.studio/',\r\n            }, {\r\n                innerText: '关于',\r\n                id: 'about',\r\n                href: '/about',\r\n            }];\r\n        this.userItems = [{\r\n                title: '登录',\r\n                id: 'login',\r\n                href: '/login',\r\n            }, {\r\n                title: '注册',\r\n                id: 'login',\r\n                href: '/register'\r\n            }];\r\n        this.init();\r\n    }\r\n    init() {\r\n        let shadow = this.attachShadow({ mode: 'open' });\r\n        this.mainDiv.appendChild(this.leftBar);\r\n        this.mainDiv.appendChild(this.rightBar);\r\n        this.leftBar.appendChild(this.logoBlock);\r\n        this.leftBar.appendChild(this.titleH1);\r\n        this.leftBar.appendChild(this.mainNav);\r\n        this.logoBlock.appendChild(this.logoImg);\r\n        this.rightBar.appendChild(this.buttonNav);\r\n        this.buttonNav.appendChild(this.usersPart);\r\n        this.mainNav.appendChild(this.mainNavUl);\r\n        this.buttonNav.appendChild(this.loggedInUserPart);\r\n        this.loggedInUserPart.appendChild(this.loginPart);\r\n        this.loggedInUserPart.appendChild(this.logoutButton);\r\n        this.logoImg.src = '/assets/logo0.svg';\r\n        this.logoImg.id = 'logo-img';\r\n        this.logoBlock.id = 'logo-block';\r\n        this.mainNav.id = 'main-nav';\r\n        this.buttonNav.id = 'button-nav';\r\n        this.leftBar.id = 'left-bar';\r\n        this.rightBar.id = 'right-bar';\r\n        this.mainDiv.id = 'main-div';\r\n        this.mainNavUl.id = 'main-nav-ul';\r\n        this.buttonNav.id = 'button-nav';\r\n        this.loggedInUserPart.id = 'loggedin-user-part';\r\n        this.logoutButton.a.id = 'logout-button';\r\n        this.logoutButton.a.className = 'button';\r\n        this.logoutButton.a.innerText = '退出登录';\r\n        this.usersPart.id = 'users-part';\r\n        let style = document.createElement('link');\r\n        style.rel = 'stylesheet';\r\n        style.href = '/dist/css/titlebar.css';\r\n        shadow.appendChild(style);\r\n        shadow.appendChild(this.mainDiv);\r\n        this.titleH1.innerText = '破站';\r\n        for (let x of this.navItems) {\r\n            let li = document.createElement('li');\r\n            let a = document.createElement('l-a');\r\n            a.a.innerText = x.innerText;\r\n            a.a.href = x.href;\r\n            li.id = x.id;\r\n            li.appendChild(a);\r\n            this.mainNavUl.appendChild(li);\r\n        }\r\n        for (let x of this.userItems) {\r\n            let li = document.createElement('div');\r\n            let a = document.createElement('b-a');\r\n            a.a.innerText = x.title;\r\n            a.a.href = x.href;\r\n            li.id = x.id;\r\n            li.appendChild(a);\r\n            this.usersPart.appendChild(li);\r\n        }\r\n    }\r\n    static get observedAttributes() {\r\n        return ['uid'];\r\n    }\r\n    attributeChangedCallback(name, oldVal, newVal) {\r\n        if (name == 'uid') {\r\n            let uid = this.getAttribute('uid');\r\n            if (uid) {\r\n                this.loginPart.setAttribute('uid', uid);\r\n                this.usersPart.style.display = 'none';\r\n                this.loggedInUserPart.style.display = '';\r\n            }\r\n            else {\r\n                this.loginPart.removeAttribute('uid');\r\n                this.usersPart.style.display = '';\r\n                this.loggedInUserPart.style.display = 'none';\r\n            }\r\n        }\r\n    }\r\n    connectedCallback() {\r\n        this.attributeChangedCallback('uid', null, this.getAttribute('uid'));\r\n    }\r\n}\r\nexports.TitleBarElement = TitleBarElement;\r\ncustomElements.define('title-bar', TitleBarElement);\r\n\n\n//# sourceURL=webpack:///./view/titlebar.ts?");
+
+/***/ }),
+
+/***/ "./view/userinf.ts":
+/*!*************************!*\
+  !*** ./view/userinf.ts ***!
+  \*************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\n// import { TitleBarElement } from \"./titlebar\";\r\nconst query_user_1 = __webpack_require__(/*! ../lib/query_user */ \"./lib/query_user.ts\");\r\nconst declarations_1 = __webpack_require__(/*! ../lib/declarations */ \"./lib/declarations.ts\");\r\nclass UserInfElement extends HTMLElement {\r\n    constructor() {\r\n        super();\r\n        this.styleLink = document.createElement('link');\r\n        this.mainDiv = document.createElement('div');\r\n        this.avatar = document.createElement('img');\r\n        this.usernameDiv = document.createElement('a');\r\n        const shadow = this.attachShadow({ mode: 'open' });\r\n        shadow.appendChild(this.mainDiv);\r\n        this.styleLink.rel = 'stylesheet';\r\n        this.styleLink.href = '/dist/css/userinf.css';\r\n        shadow.appendChild(this.styleLink);\r\n        this.mainDiv.appendChild(this.avatar);\r\n        this.mainDiv.appendChild(this.usernameDiv);\r\n        this.mainDiv.id = 'main-div';\r\n        this.avatar.id = 'avatar';\r\n        this.usernameDiv.id = 'username-div';\r\n    }\r\n    static get observedAttributes() {\r\n        return ['uid'];\r\n    }\r\n    attributeChangedCallback(name, oldVal, newVal) {\r\n        if (name == 'uid' && newVal) {\r\n            this.avatar.src = `/api/avatar/${newVal}`;\r\n            this.usernameDiv.href = `/user/${newVal}`;\r\n            this.avatar.onclick = () => {\r\n                location.href = `/user/${newVal}`;\r\n            };\r\n            query_user_1.queryUser({\r\n                queryName: Number(newVal),\r\n                queryCol: declarations_1.QUERY_USER_REQUEST_QUERY_COL_USERID,\r\n            }, '/api/user/query').then((res) => {\r\n                if (res.status == 'Success' && res.user) {\r\n                    this.usernameDiv.innerText = res.user.username;\r\n                }\r\n            });\r\n        }\r\n    }\r\n}\r\nexports.UserInfElement = UserInfElement;\r\ncustomElements.define('user-inf', UserInfElement);\r\n\n\n//# sourceURL=webpack:///./view/userinf.ts?");
 
 /***/ })
 

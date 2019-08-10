@@ -2,14 +2,10 @@
     <head>
         <meta charset="utf-8">
         <title>test page</title>
+        <link rel="stylesheet" href="/dist/css/global.css">
     </head>
     <body>
-        <style>
-            body{
-                margin:0;
-            }
-        </style>
-        <title-bar></title-bar>
+        <% include('./title-bar.ejs')%>
         <script src="/dist/bundle.js"></script>
     </body>
 </html>

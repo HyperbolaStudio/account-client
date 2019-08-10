@@ -1,4 +1,4 @@
-import { TitleBarElement } from "./titlebar";
+// import { TitleBarElement } from "./titlebar";
 import { queryUser } from "../lib/query_user";
 import { QUERY_USER_REQUEST_QUERY_COL_USERID } from "../lib/declarations";
 
@@ -19,13 +19,17 @@ export class UserInfElement extends HTMLElement{
     styleLink = document.createElement('link');
     mainDiv = document.createElement('div');
         avatar = document.createElement('img');
-        usernameDiv = document.createElement('div');
+        usernameDiv = document.createElement('a');
     static get observedAttributes():string[]{
         return ['uid'];
     }
     attributeChangedCallback(name:string,oldVal:string,newVal:string){
         if(name == 'uid' && newVal){
             this.avatar.src = `/api/avatar/${newVal}`;
+            this.usernameDiv.href =`/user/${newVal}`
+            this.avatar.onclick = ()=>{
+                location.href = `/user/${newVal}`;
+            }
             queryUser({
                 queryName:Number(newVal),
                 queryCol:QUERY_USER_REQUEST_QUERY_COL_USERID,
