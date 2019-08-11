@@ -1,5 +1,7 @@
-import { validate as v } from '../lib/register';
-const users = [{
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var register_1 = require("../lib/register");
+var users = [{
         username: 'aaa_bbb',
         nickname: 'aaa_bbb',
         res: true,
@@ -24,9 +26,9 @@ const users = [{
         nickname: 'ihaf\niahu',
         res: false,
     }];
-for (let x in users) {
-    let a = users[x];
-    if (v({
+for (var x in users) {
+    var a = users[x];
+    if (register_1.validate({
         username: a.username,
         passwordSHA256: '',
         inviteCode: '',

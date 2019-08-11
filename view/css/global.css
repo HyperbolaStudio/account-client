@@ -1,0 +1,9 @@
+@import './titlebar.css';
+@import './userinf.css';
+body{
+    --back-color:#00a0e9;
+    --fore-color:#fff;
+    --second-color:#123456;
+    --text-color:#000;
+    margin:0;
+}

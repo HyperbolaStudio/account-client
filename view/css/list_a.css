@@ -1,0 +1,9 @@
+a.list,a>*.list{
+    text-decoration-line: none;
+}
+a.list:hover,a:hover>*.list{
+    text-decoration-line: underline;
+}
+a.list,a>*.list{
+    color:var(--text-color,black);
+}

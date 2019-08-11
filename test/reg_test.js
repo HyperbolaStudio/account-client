@@ -1,5 +1,7 @@
-import { register } from '../lib/register';
-let r = [{
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var register_1 = require("../lib/register");
+var r = [{
         username: 'atxps',
         nickname: 'van',
         passwordSHA256: '11',
@@ -38,7 +40,8 @@ let r = [{
         birthDate: [2017, 1, 23],
         gender: 'female',
     }];
-for (let x of r) {
-    register(x, 'http://localhost:3000/api/register').then((response) => {
+for (var _i = 0, r_1 = r; _i < r_1.length; _i++) {
+    var x = r_1[_i];
+    register_1.register(x, 'http://localhost:3000/api/register').then(function (response) {
     });
 }
