@@ -4,6 +4,6 @@ a{
 a:hover{
     text-decoration-line: underline;
 }
-a{
+a.list{
     color:var(--fore-color,black);
 }

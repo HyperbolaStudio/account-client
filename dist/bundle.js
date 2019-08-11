@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./lib/index.ts");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./lib/index.js");
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -97,63 +97,105 @@ eval("// shim for using process in browser\nvar process = module.exports = {};\n
 
 /***/ }),
 
-/***/ "./lib/accessor.ts":
-/*!*************************!*\
-  !*** ./lib/accessor.ts ***!
-  \*************************/
+/***/ "../node_modules/_css-loader@3.2.0@css-loader/dist/cjs.js!./css/button_a.css":
+/*!***********************************************************************************!*\
+  !*** ../node_modules/_css-loader@3.2.0@css-loader/dist/cjs.js!./css/button_a.css ***!
+  \***********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("exports = module.exports = __webpack_require__(/*! ../../node_modules/_css-loader@3.2.0@css-loader/dist/runtime/api.js */ \"../node_modules/_css-loader@3.2.0@css-loader/dist/runtime/api.js\")(false);\n// Module\nexports.push([module.i, \"a{\\r\\n    text-decoration-line: none;\\r\\n}\\r\\na:hover{\\r\\n    text-decoration-line: underline;\\r\\n}\\r\\na.button{\\r\\n    background-color: var(--back-color,black);\\r\\n    padding:0.5em 1em;\\r\\n    line-height: 2em;\\r\\n    color:var(--fore-color,white);\\r\\n    user-select:none;\\r\\n    -moz-user-select: none;\\r\\n    -webkit-user-select: none;\\r\\n    border-radius: 0.25em;\\r\\n    cursor: pointer;\\r\\n}\", \"\"]);\n\n\n//# sourceURL=webpack:///./css/button_a.css?../node_modules/_css-loader@3.2.0@css-loader/dist/cjs.js");
+
+/***/ }),
+
+/***/ "../node_modules/_css-loader@3.2.0@css-loader/dist/cjs.js!./css/global.css":
+/*!*********************************************************************************!*\
+  !*** ../node_modules/_css-loader@3.2.0@css-loader/dist/cjs.js!./css/global.css ***!
+  \*********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("exports = module.exports = __webpack_require__(/*! ../../node_modules/_css-loader@3.2.0@css-loader/dist/runtime/api.js */ \"../node_modules/_css-loader@3.2.0@css-loader/dist/runtime/api.js\")(false);\n// Imports\nexports.i(__webpack_require__(/*! -!../../node_modules/_css-loader@3.2.0@css-loader/dist/cjs.js!./titlebar.css */ \"../node_modules/_css-loader@3.2.0@css-loader/dist/cjs.js!./css/titlebar.css\"), \"\");\nexports.i(__webpack_require__(/*! -!../../node_modules/_css-loader@3.2.0@css-loader/dist/cjs.js!./userinf.css */ \"../node_modules/_css-loader@3.2.0@css-loader/dist/cjs.js!./css/userinf.css\"), \"\");\n// Module\nexports.push([module.i, \"body{\\r\\n    margin:0;\\r\\n}\", \"\"]);\n\n\n//# sourceURL=webpack:///./css/global.css?../node_modules/_css-loader@3.2.0@css-loader/dist/cjs.js");
+
+/***/ }),
+
+/***/ "../node_modules/_css-loader@3.2.0@css-loader/dist/cjs.js!./css/list_a.css":
+/*!*********************************************************************************!*\
+  !*** ../node_modules/_css-loader@3.2.0@css-loader/dist/cjs.js!./css/list_a.css ***!
+  \*********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("exports = module.exports = __webpack_require__(/*! ../../node_modules/_css-loader@3.2.0@css-loader/dist/runtime/api.js */ \"../node_modules/_css-loader@3.2.0@css-loader/dist/runtime/api.js\")(false);\n// Module\nexports.push([module.i, \"a{\\r\\n    text-decoration-line: none;\\r\\n}\\r\\na:hover{\\r\\n    text-decoration-line: underline;\\r\\n}\\r\\na.list{\\r\\n    color:var(--fore-color,black);\\r\\n}\", \"\"]);\n\n\n//# sourceURL=webpack:///./css/list_a.css?../node_modules/_css-loader@3.2.0@css-loader/dist/cjs.js");
+
+/***/ }),
+
+/***/ "../node_modules/_css-loader@3.2.0@css-loader/dist/cjs.js!./css/titlebar.css":
+/*!***********************************************************************************!*\
+  !*** ../node_modules/_css-loader@3.2.0@css-loader/dist/cjs.js!./css/titlebar.css ***!
+  \***********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("exports = module.exports = __webpack_require__(/*! ../../node_modules/_css-loader@3.2.0@css-loader/dist/runtime/api.js */ \"../node_modules/_css-loader@3.2.0@css-loader/dist/runtime/api.js\")(false);\n// Imports\nexports.i(__webpack_require__(/*! -!../../node_modules/_css-loader@3.2.0@css-loader/dist/cjs.js!./list_a.css */ \"../node_modules/_css-loader@3.2.0@css-loader/dist/cjs.js!./css/list_a.css\"), \"\");\nexports.i(__webpack_require__(/*! -!../../node_modules/_css-loader@3.2.0@css-loader/dist/cjs.js!./button_a.css */ \"../node_modules/_css-loader@3.2.0@css-loader/dist/cjs.js!./css/button_a.css\"), \"\");\n// Module\nexports.push([module.i, \".title-bar{\\r\\n    height:60px;\\r\\n    justify-content: space-between;\\r\\n    /* align-items: center; */\\r\\n    /* margin:8px; */\\r\\n    box-shadow: 0 0 4px;\\r\\n    border-radius: 0 0 8px 8px;\\r\\n}\\r\\n.title-bar .logo-img{\\r\\n    height:48px;\\r\\n}\\r\\n.title-bar,.title-bar .left-bar,.title-bar .right-bar,.title-bar .main-div,.title-bar ul,.title-bar .button-nav,.title-bar .users-part,.title-bar .loggedin-user-part{\\r\\n    display:flex;\\r\\n    align-items: center;\\r\\n}\\r\\n.title-bar ul>*:first-child{\\r\\n    margin-left:0;\\r\\n}\\r\\n.title-bar ul>*:last-child{\\r\\n    margin-right:0;\\r\\n}\\r\\n.title-bar .left-bar>*,.title-bar .right-bar>*,.title-bar ul>*,.title-bar .users-part>*,.title-bar .loggedin-user-part>*{\\r\\n    margin:0 8px;\\r\\n}\\r\\n.title-bar h1{\\r\\n    font-weight: 500;\\r\\n}\\r\\n.title-bar ul{\\r\\n    list-style-type: none;\\r\\n    padding: 0;\\r\\n}\\r\\n\", \"\"]);\n\n\n//# sourceURL=webpack:///./css/titlebar.css?../node_modules/_css-loader@3.2.0@css-loader/dist/cjs.js");
+
+/***/ }),
+
+/***/ "../node_modules/_css-loader@3.2.0@css-loader/dist/cjs.js!./css/userinf.css":
+/*!**********************************************************************************!*\
+  !*** ../node_modules/_css-loader@3.2.0@css-loader/dist/cjs.js!./css/userinf.css ***!
+  \**********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("exports = module.exports = __webpack_require__(/*! ../../node_modules/_css-loader@3.2.0@css-loader/dist/runtime/api.js */ \"../node_modules/_css-loader@3.2.0@css-loader/dist/runtime/api.js\")(false);\n// Imports\nexports.i(__webpack_require__(/*! -!../../node_modules/_css-loader@3.2.0@css-loader/dist/cjs.js!./list_a.css */ \"../node_modules/_css-loader@3.2.0@css-loader/dist/cjs.js!./css/list_a.css\"), \"\");\nexports.i(__webpack_require__(/*! -!../../node_modules/_css-loader@3.2.0@css-loader/dist/cjs.js!./button_a.css */ \"../node_modules/_css-loader@3.2.0@css-loader/dist/cjs.js!./css/button_a.css\"), \"\");\n// Module\nexports.push([module.i, \".user-inf{\\r\\n    display:flex;\\r\\n    align-items:center;\\r\\n}\\r\\n.user-inf .avatar{\\r\\n    border-radius: 2px;\\r\\n    height: 36px;\\r\\n    width: 36px;\\r\\n    margin-right: 8px;\\r\\n    cursor: pointer;\\r\\n}\", \"\"]);\n\n\n//# sourceURL=webpack:///./css/userinf.css?../node_modules/_css-loader@3.2.0@css-loader/dist/cjs.js");
+
+/***/ }),
+
+/***/ "../node_modules/_css-loader@3.2.0@css-loader/dist/runtime/api.js":
+/*!************************************************************************!*\
+  !*** ../node_modules/_css-loader@3.2.0@css-loader/dist/runtime/api.js ***!
+  \************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nconst axios_1 = __importDefault(__webpack_require__(/*! axios */ \"./node_modules/_axios@0.19.0@axios/index.js\"));\r\nasync function accessor(req, path, validate = () => true) {\r\n    return new Promise((resolve, reject) => {\r\n        if (!validate(req)) {\r\n            reject(new Error('Invalid value'));\r\n            return;\r\n        }\r\n        axios_1.default.post(path, req).then((res) => {\r\n            const response = res.data;\r\n            if (response.status !== 'Success') {\r\n                reject(new Error(response.status));\r\n            }\r\n            else {\r\n                resolve(response);\r\n            }\r\n        }).catch((err) => {\r\n            reject(err);\r\n        });\r\n    });\r\n}\r\nexports.accessor = accessor;\r\n\n\n//# sourceURL=webpack:///./lib/accessor.ts?");
+eval("\n\n/*\n  MIT License http://www.opensource.org/licenses/mit-license.php\n  Author Tobias Koppers @sokra\n*/\n// css base code, injected by the css-loader\n// eslint-disable-next-line func-names\nmodule.exports = function (useSourceMap) {\n  var list = []; // return the list of modules as css string\n\n  list.toString = function toString() {\n    return this.map(function (item) {\n      var content = cssWithMappingToString(item, useSourceMap);\n\n      if (item[2]) {\n        return \"@media \".concat(item[2], \"{\").concat(content, \"}\");\n      }\n\n      return content;\n    }).join('');\n  }; // import a list of modules into the list\n  // eslint-disable-next-line func-names\n\n\n  list.i = function (modules, mediaQuery) {\n    if (typeof modules === 'string') {\n      // eslint-disable-next-line no-param-reassign\n      modules = [[null, modules, '']];\n    }\n\n    var alreadyImportedModules = {};\n\n    for (var i = 0; i < this.length; i++) {\n      // eslint-disable-next-line prefer-destructuring\n      var id = this[i][0];\n\n      if (id != null) {\n        alreadyImportedModules[id] = true;\n      }\n    }\n\n    for (var _i = 0; _i < modules.length; _i++) {\n      var item = modules[_i]; // skip already imported module\n      // this implementation is not 100% perfect for weird media query combinations\n      // when a module is imported multiple times with different media queries.\n      // I hope this will never occur (Hey this way we have smaller bundles)\n\n      if (item[0] == null || !alreadyImportedModules[item[0]]) {\n        if (mediaQuery && !item[2]) {\n          item[2] = mediaQuery;\n        } else if (mediaQuery) {\n          item[2] = \"(\".concat(item[2], \") and (\").concat(mediaQuery, \")\");\n        }\n\n        list.push(item);\n      }\n    }\n  };\n\n  return list;\n};\n\nfunction cssWithMappingToString(item, useSourceMap) {\n  var content = item[1] || ''; // eslint-disable-next-line prefer-destructuring\n\n  var cssMapping = item[3];\n\n  if (!cssMapping) {\n    return content;\n  }\n\n  if (useSourceMap && typeof btoa === 'function') {\n    var sourceMapping = toComment(cssMapping);\n    var sourceURLs = cssMapping.sources.map(function (source) {\n      return \"/*# sourceURL=\".concat(cssMapping.sourceRoot).concat(source, \" */\");\n    });\n    return [content].concat(sourceURLs).concat([sourceMapping]).join('\\n');\n  }\n\n  return [content].join('\\n');\n} // Adapted from convert-source-map (MIT)\n\n\nfunction toComment(sourceMap) {\n  // eslint-disable-next-line no-undef\n  var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap))));\n  var data = \"sourceMappingURL=data:application/json;charset=utf-8;base64,\".concat(base64);\n  return \"/*# \".concat(data, \" */\");\n}\n\n//# sourceURL=webpack:///../node_modules/_css-loader@3.2.0@css-loader/dist/runtime/api.js?");
 
 /***/ }),
 
-/***/ "./lib/declarations.ts":
-/*!*****************************!*\
-  !*** ./lib/declarations.ts ***!
-  \*****************************/
+/***/ "../node_modules/_style-loader@1.0.0@style-loader/dist/runtime/injectStylesIntoStyleTag.js":
+/*!*************************************************************************************************!*\
+  !*** ../node_modules/_style-loader@1.0.0@style-loader/dist/runtime/injectStylesIntoStyleTag.js ***!
+  \*************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.LOGIN_REQUEST_LOGIN_TYPE_USERNAME = 1;\r\nexports.LOGIN_REQUEST_LOGIN_TYPE_USERID = 2;\r\nexports.QUERY_USER_REQUEST_QUERY_COL_USERNAME = 1;\r\nexports.QUERY_USER_REQUEST_QUERY_COL_USERID = 2;\r\n\n\n//# sourceURL=webpack:///./lib/declarations.ts?");
+eval("\n\nvar stylesInDom = {};\n\nvar isOldIE = function isOldIE() {\n  var memo;\n  return function memorize() {\n    if (typeof memo === 'undefined') {\n      // Test for IE <= 9 as proposed by Browserhacks\n      // @see http://browserhacks.com/#hack-e71d8692f65334173fee715c222cb805\n      // Tests for existence of standard globals is to allow style-loader\n      // to operate correctly into non-standard environments\n      // @see https://github.com/webpack-contrib/style-loader/issues/177\n      memo = Boolean(window && document && document.all && !window.atob);\n    }\n\n    return memo;\n  };\n}();\n\nvar getTarget = function getTarget() {\n  var memo = {};\n  return function memorize(target) {\n    if (typeof memo[target] === 'undefined') {\n      var styleTarget = document.querySelector(target); // Special case to return head of iframe instead of iframe itself\n\n      if (window.HTMLIFrameElement && styleTarget instanceof window.HTMLIFrameElement) {\n        try {\n          // This will throw an exception if access to iframe is blocked\n          // due to cross-origin restrictions\n          styleTarget = styleTarget.contentDocument.head;\n        } catch (e) {\n          // istanbul ignore next\n          styleTarget = null;\n        }\n      }\n\n      memo[target] = styleTarget;\n    }\n\n    return memo[target];\n  };\n}();\n\nfunction listToStyles(list, options) {\n  var styles = [];\n  var newStyles = {};\n\n  for (var i = 0; i < list.length; i++) {\n    var item = list[i];\n    var id = options.base ? item[0] + options.base : item[0];\n    var css = item[1];\n    var media = item[2];\n    var sourceMap = item[3];\n    var part = {\n      css: css,\n      media: media,\n      sourceMap: sourceMap\n    };\n\n    if (!newStyles[id]) {\n      styles.push(newStyles[id] = {\n        id: id,\n        parts: [part]\n      });\n    } else {\n      newStyles[id].parts.push(part);\n    }\n  }\n\n  return styles;\n}\n\nfunction addStylesToDom(styles, options) {\n  for (var i = 0; i < styles.length; i++) {\n    var item = styles[i];\n    var domStyle = stylesInDom[item.id];\n    var j = 0;\n\n    if (domStyle) {\n      domStyle.refs++;\n\n      for (; j < domStyle.parts.length; j++) {\n        domStyle.parts[j](item.parts[j]);\n      }\n\n      for (; j < item.parts.length; j++) {\n        domStyle.parts.push(addStyle(item.parts[j], options));\n      }\n    } else {\n      var parts = [];\n\n      for (; j < item.parts.length; j++) {\n        parts.push(addStyle(item.parts[j], options));\n      }\n\n      stylesInDom[item.id] = {\n        id: item.id,\n        refs: 1,\n        parts: parts\n      };\n    }\n  }\n}\n\nfunction insertStyleElement(options) {\n  var style = document.createElement('style');\n\n  if (typeof options.attributes.nonce === 'undefined') {\n    var nonce =  true ? __webpack_require__.nc : undefined;\n\n    if (nonce) {\n      options.attributes.nonce = nonce;\n    }\n  }\n\n  Object.keys(options.attributes).forEach(function (key) {\n    style.setAttribute(key, options.attributes[key]);\n  });\n\n  if (typeof options.insert === 'function') {\n    options.insert(style);\n  } else {\n    var target = getTarget(options.insert || 'head');\n\n    if (!target) {\n      throw new Error(\"Couldn't find a style target. This probably means that the value for the 'insert' parameter is invalid.\");\n    }\n\n    target.appendChild(style);\n  }\n\n  return style;\n}\n\nfunction removeStyleElement(style) {\n  // istanbul ignore if\n  if (style.parentNode === null) {\n    return false;\n  }\n\n  style.parentNode.removeChild(style);\n}\n/* istanbul ignore next  */\n\n\nvar replaceText = function replaceText() {\n  var textStore = [];\n  return function replace(index, replacement) {\n    textStore[index] = replacement;\n    return textStore.filter(Boolean).join('\\n');\n  };\n}();\n\nfunction applyToSingletonTag(style, index, remove, obj) {\n  var css = remove ? '' : obj.css; // For old IE\n\n  /* istanbul ignore if  */\n\n  if (style.styleSheet) {\n    style.styleSheet.cssText = replaceText(index, css);\n  } else {\n    var cssNode = document.createTextNode(css);\n    var childNodes = style.childNodes;\n\n    if (childNodes[index]) {\n      style.removeChild(childNodes[index]);\n    }\n\n    if (childNodes.length) {\n      style.insertBefore(cssNode, childNodes[index]);\n    } else {\n      style.appendChild(cssNode);\n    }\n  }\n}\n\nfunction applyToTag(style, options, obj) {\n  var css = obj.css;\n  var media = obj.media;\n  var sourceMap = obj.sourceMap;\n\n  if (media) {\n    style.setAttribute('media', media);\n  }\n\n  if (sourceMap && btoa) {\n    css += \"\\n/*# sourceMappingURL=data:application/json;base64,\".concat(btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))), \" */\");\n  } // For old IE\n\n  /* istanbul ignore if  */\n\n\n  if (style.styleSheet) {\n    style.styleSheet.cssText = css;\n  } else {\n    while (style.firstChild) {\n      style.removeChild(style.firstChild);\n    }\n\n    style.appendChild(document.createTextNode(css));\n  }\n}\n\nvar singleton = null;\nvar singletonCounter = 0;\n\nfunction addStyle(obj, options) {\n  var style;\n  var update;\n  var remove;\n\n  if (options.singleton) {\n    var styleIndex = singletonCounter++;\n    style = singleton || (singleton = insertStyleElement(options));\n    update = applyToSingletonTag.bind(null, style, styleIndex, false);\n    remove = applyToSingletonTag.bind(null, style, styleIndex, true);\n  } else {\n    style = insertStyleElement(options);\n    update = applyToTag.bind(null, style, options);\n\n    remove = function remove() {\n      removeStyleElement(style);\n    };\n  }\n\n  update(obj);\n  return function updateStyle(newObj) {\n    if (newObj) {\n      if (newObj.css === obj.css && newObj.media === obj.media && newObj.sourceMap === obj.sourceMap) {\n        return;\n      }\n\n      update(obj = newObj);\n    } else {\n      remove();\n    }\n  };\n}\n\nmodule.exports = function (list, options) {\n  options = options || {};\n  options.attributes = typeof options.attributes === 'object' ? options.attributes : {}; // Force single-tag solution on IE6-9, which has a hard limit on the # of <style>\n  // tags it will allow on a page\n\n  if (!options.singleton && typeof options.singleton !== 'boolean') {\n    options.singleton = isOldIE();\n  }\n\n  var styles = listToStyles(list, options);\n  addStylesToDom(styles, options);\n  return function update(newList) {\n    var mayRemove = [];\n\n    for (var i = 0; i < styles.length; i++) {\n      var item = styles[i];\n      var domStyle = stylesInDom[item.id];\n\n      if (domStyle) {\n        domStyle.refs--;\n        mayRemove.push(domStyle);\n      }\n    }\n\n    if (newList) {\n      var newStyles = listToStyles(newList, options);\n      addStylesToDom(newStyles, options);\n    }\n\n    for (var _i = 0; _i < mayRemove.length; _i++) {\n      var _domStyle = mayRemove[_i];\n\n      if (_domStyle.refs === 0) {\n        for (var j = 0; j < _domStyle.parts.length; j++) {\n          _domStyle.parts[j]();\n        }\n\n        delete stylesInDom[_domStyle.id];\n      }\n    }\n  };\n};\n\n//# sourceURL=webpack:///../node_modules/_style-loader@1.0.0@style-loader/dist/runtime/injectStylesIntoStyleTag.js?");
 
 /***/ }),
 
-/***/ "./lib/index.ts":
+/***/ "./css/global.css":
+/*!************************!*\
+  !*** ./css/global.css ***!
+  \************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("var content = __webpack_require__(/*! !../../node_modules/_css-loader@3.2.0@css-loader/dist/cjs.js!./global.css */ \"../node_modules/_css-loader@3.2.0@css-loader/dist/cjs.js!./css/global.css\");\n\nif (typeof content === 'string') {\n  content = [[module.i, content, '']];\n}\n\nvar options = {}\n\noptions.insert = \"head\";\noptions.singleton = false;\n\nvar update = __webpack_require__(/*! ../../node_modules/_style-loader@1.0.0@style-loader/dist/runtime/injectStylesIntoStyleTag.js */ \"../node_modules/_style-loader@1.0.0@style-loader/dist/runtime/injectStylesIntoStyleTag.js\")(content, options);\n\nif (content.locals) {\n  module.exports = content.locals;\n}\n\n\n//# sourceURL=webpack:///./css/global.css?");
+
+/***/ }),
+
+/***/ "./lib/index.js":
 /*!**********************!*\
-  !*** ./lib/index.ts ***!
+  !*** ./lib/index.js ***!
   \**********************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nconst axios_1 = __importDefault(__webpack_require__(/*! axios */ \"./node_modules/_axios@0.19.0@axios/index.js\"));\r\naxios_1.default.defaults.withCredentials = true;\r\n__webpack_require__(/*! ../view/index */ \"./view/index.ts\");\r\n\n\n//# sourceURL=webpack:///./lib/index.ts?");
-
-/***/ }),
-
-/***/ "./lib/query_user.ts":
-/*!***************************!*\
-  !*** ./lib/query_user.ts ***!
-  \***************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-eval("\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nconst declarations_1 = __webpack_require__(/*! ./declarations */ \"./lib/declarations.ts\");\r\nconst regexp_1 = __webpack_require__(/*! ./regexp */ \"./lib/regexp.ts\");\r\nconst accessor_1 = __webpack_require__(/*! ./accessor */ \"./lib/accessor.ts\");\r\nfunction validate(req) {\r\n    if (!req.queryName || !req.queryCol) {\r\n        return false;\r\n    }\r\n    if (req.queryCol == declarations_1.QUERY_USER_REQUEST_QUERY_COL_USERNAME) {\r\n        if (typeof (req.queryName) != 'string' || !regexp_1.user.username.regexp.test(req.queryName)) {\r\n            return false;\r\n        }\r\n    }\r\n    else if (req.queryCol == declarations_1.QUERY_USER_REQUEST_QUERY_COL_USERID) {\r\n        if (typeof (req.queryName) != 'number') {\r\n            return false;\r\n        }\r\n    }\r\n    else {\r\n        return false;\r\n    }\r\n    return true;\r\n}\r\nexports.validate = validate;\r\nfunction queryUser(req, path) {\r\n    return accessor_1.accessor(req, path, validate);\r\n}\r\nexports.queryUser = queryUser;\r\n\n\n//# sourceURL=webpack:///./lib/query_user.ts?");
-
-/***/ }),
-
-/***/ "./lib/regexp.ts":
-/*!***********************!*\
-  !*** ./lib/regexp.ts ***!
-  \***********************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-eval("\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nlet username_regexp = /^\\w+$/;\r\nlet nickname_regexp = /^(\\w|[\\u0080-\\uffff])+$/;\r\nconst user = {\r\n    username: {\r\n        regexp: /^\\w+$/,\r\n        description: {\r\n            zh_Hans: '由大小写拉丁字母，阿拉伯数字或下划线构成',\r\n            en: 'Composed of uppercase and lowercase Latin letters, Arabic numbers or underscores'\r\n        }\r\n    },\r\n    nickname: {\r\n        regexp: /^(\\w|[\\u0080-\\uffff]|[\\u0020])+$/,\r\n        description: {\r\n            zh_Hans: '由大小写拉丁字母，阿拉伯数字,下划线或其他非ASCII字符构成',\r\n            en: 'Composed of uppercase and lowercase Latin letters, Arabic numbers, underscores or other non-ASCII characters'\r\n        }\r\n    },\r\n    passwordSHA256: {\r\n        regexp: /^([0-9]|[a-f]){64}$/,\r\n        description: {},\r\n    },\r\n    inviteCode: {\r\n        regexp: /^([0-9]|[a-f]){16}$/,\r\n        description: {},\r\n    }\r\n};\r\nexports.user = user;\r\n\n\n//# sourceURL=webpack:///./lib/regexp.ts?");
+eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nvar axios_1 = __importDefault(__webpack_require__(/*! axios */ \"./node_modules/_axios@0.19.0@axios/index.js\"));\r\naxios_1.default.defaults.withCredentials = true;\r\n__webpack_require__(/*! ../view/index */ \"./view/index.js\");\r\n\n\n//# sourceURL=webpack:///./lib/index.js?");
 
 /***/ }),
 
@@ -467,51 +509,15 @@ eval("/*!\n * Determine if an object is a Buffer\n *\n * @author   Feross Aboukh
 
 /***/ }),
 
-/***/ "./view/button_like_a.ts":
-/*!*******************************!*\
-  !*** ./view/button_like_a.ts ***!
-  \*******************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-eval("\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nclass ButtonLikeA extends HTMLElement {\r\n    constructor() {\r\n        super();\r\n        this.link = document.createElement('link');\r\n        this.container = document.createElement('div');\r\n        this.a = document.createElement('a');\r\n        let shadow = this.attachShadow({ mode: 'open' });\r\n        this.link.rel = 'stylesheet';\r\n        shadow.appendChild(this.link);\r\n        shadow.appendChild(this.container);\r\n        this.container.appendChild(this.a);\r\n    }\r\n}\r\nexports.ButtonLikeA = ButtonLikeA;\r\nclass ListA extends ButtonLikeA {\r\n    constructor() {\r\n        super();\r\n        this.link.href = '/dist/css/list_a.css';\r\n    }\r\n}\r\nexports.ListA = ListA;\r\ncustomElements.define('l-a', ListA);\r\nclass ButtonA extends ButtonLikeA {\r\n    constructor() {\r\n        super();\r\n        this.link.href = '/dist/css/button_a.css';\r\n    }\r\n}\r\nexports.ButtonA = ButtonA;\r\ncustomElements.define('b-a', ButtonA);\r\n\n\n//# sourceURL=webpack:///./view/button_like_a.ts?");
-
-/***/ }),
-
-/***/ "./view/index.ts":
+/***/ "./view/index.js":
 /*!***********************!*\
-  !*** ./view/index.ts ***!
+  !*** ./view/index.js ***!
   \***********************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\n__webpack_require__(/*! ./button_like_a */ \"./view/button_like_a.ts\");\r\n__webpack_require__(/*! ./userinf */ \"./view/userinf.ts\");\r\n__webpack_require__(/*! ./titlebar */ \"./view/titlebar.ts\");\r\n\n\n//# sourceURL=webpack:///./view/index.ts?");
-
-/***/ }),
-
-/***/ "./view/titlebar.ts":
-/*!**************************!*\
-  !*** ./view/titlebar.ts ***!
-  \**************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-eval("\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nclass TitleBarElement extends HTMLElement {\r\n    constructor() {\r\n        super();\r\n        this.mainDiv = document.createElement('header');\r\n        this.leftBar = document.createElement('div');\r\n        this.logoBlock = document.createElement('div');\r\n        this.logoImg = document.createElement('img');\r\n        this.titleH1 = document.createElement('h1');\r\n        this.mainNav = document.createElement('nav');\r\n        this.mainNavUl = document.createElement('ul');\r\n        this.rightBar = document.createElement('div');\r\n        this.buttonNav = document.createElement('nav');\r\n        this.usersPart = document.createElement('div');\r\n        this.loggedInUserPart = document.createElement('div');\r\n        this.loginPart = document.createElement('user-inf');\r\n        this.logoutButton = document.createElement('b-a');\r\n        this.navItems = [{\r\n                innerText: '主页',\r\n                id: 'homepage',\r\n                href: '/',\r\n            }, {\r\n                innerText: '动态',\r\n                id: 'trend',\r\n                href: '/trend',\r\n            }, {\r\n                innerText: '-1娘的破站',\r\n                id: 'nega1',\r\n                href: 'https://nega1.hyperbola.studio/',\r\n            }, {\r\n                innerText: '关于',\r\n                id: 'about',\r\n                href: '/about',\r\n            }];\r\n        this.userItems = [{\r\n                title: '登录',\r\n                id: 'login',\r\n                href: '/login',\r\n            }, {\r\n                title: '注册',\r\n                id: 'login',\r\n                href: '/register'\r\n            }];\r\n        this.init();\r\n    }\r\n    init() {\r\n        let shadow = this.attachShadow({ mode: 'open' });\r\n        this.mainDiv.appendChild(this.leftBar);\r\n        this.mainDiv.appendChild(this.rightBar);\r\n        this.leftBar.appendChild(this.logoBlock);\r\n        this.leftBar.appendChild(this.titleH1);\r\n        this.leftBar.appendChild(this.mainNav);\r\n        this.logoBlock.appendChild(this.logoImg);\r\n        this.rightBar.appendChild(this.buttonNav);\r\n        this.buttonNav.appendChild(this.usersPart);\r\n        this.mainNav.appendChild(this.mainNavUl);\r\n        this.buttonNav.appendChild(this.loggedInUserPart);\r\n        this.loggedInUserPart.appendChild(this.loginPart);\r\n        this.loggedInUserPart.appendChild(this.logoutButton);\r\n        this.logoImg.src = '/assets/logo0.svg';\r\n        this.logoImg.id = 'logo-img';\r\n        this.logoBlock.id = 'logo-block';\r\n        this.mainNav.id = 'main-nav';\r\n        this.buttonNav.id = 'button-nav';\r\n        this.leftBar.id = 'left-bar';\r\n        this.rightBar.id = 'right-bar';\r\n        this.mainDiv.id = 'main-div';\r\n        this.mainNavUl.id = 'main-nav-ul';\r\n        this.buttonNav.id = 'button-nav';\r\n        this.loggedInUserPart.id = 'loggedin-user-part';\r\n        this.logoutButton.a.id = 'logout-button';\r\n        this.logoutButton.a.className = 'button';\r\n        this.logoutButton.a.innerText = '退出登录';\r\n        this.usersPart.id = 'users-part';\r\n        let style = document.createElement('link');\r\n        style.rel = 'stylesheet';\r\n        style.href = '/dist/css/titlebar.css';\r\n        shadow.appendChild(style);\r\n        shadow.appendChild(this.mainDiv);\r\n        this.titleH1.innerText = '破站';\r\n        for (let x of this.navItems) {\r\n            let li = document.createElement('li');\r\n            let a = document.createElement('l-a');\r\n            a.a.innerText = x.innerText;\r\n            a.a.href = x.href;\r\n            li.id = x.id;\r\n            li.appendChild(a);\r\n            this.mainNavUl.appendChild(li);\r\n        }\r\n        for (let x of this.userItems) {\r\n            let li = document.createElement('div');\r\n            let a = document.createElement('b-a');\r\n            a.a.innerText = x.title;\r\n            a.a.href = x.href;\r\n            li.id = x.id;\r\n            li.appendChild(a);\r\n            this.usersPart.appendChild(li);\r\n        }\r\n    }\r\n    static get observedAttributes() {\r\n        return ['uid'];\r\n    }\r\n    attributeChangedCallback(name, oldVal, newVal) {\r\n        if (name == 'uid') {\r\n            let uid = this.getAttribute('uid');\r\n            if (uid) {\r\n                this.loginPart.setAttribute('uid', uid);\r\n                this.usersPart.style.display = 'none';\r\n                this.loggedInUserPart.style.display = '';\r\n            }\r\n            else {\r\n                this.loginPart.removeAttribute('uid');\r\n                this.usersPart.style.display = '';\r\n                this.loggedInUserPart.style.display = 'none';\r\n            }\r\n        }\r\n    }\r\n    connectedCallback() {\r\n        this.attributeChangedCallback('uid', null, this.getAttribute('uid'));\r\n    }\r\n}\r\nexports.TitleBarElement = TitleBarElement;\r\ncustomElements.define('title-bar', TitleBarElement);\r\n\n\n//# sourceURL=webpack:///./view/titlebar.ts?");
-
-/***/ }),
-
-/***/ "./view/userinf.ts":
-/*!*************************!*\
-  !*** ./view/userinf.ts ***!
-  \*************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-eval("\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\n// import { TitleBarElement } from \"./titlebar\";\r\nconst query_user_1 = __webpack_require__(/*! ../lib/query_user */ \"./lib/query_user.ts\");\r\nconst declarations_1 = __webpack_require__(/*! ../lib/declarations */ \"./lib/declarations.ts\");\r\nclass UserInfElement extends HTMLElement {\r\n    constructor() {\r\n        super();\r\n        this.styleLink = document.createElement('link');\r\n        this.mainDiv = document.createElement('div');\r\n        this.avatar = document.createElement('img');\r\n        this.usernameDiv = document.createElement('a');\r\n        const shadow = this.attachShadow({ mode: 'open' });\r\n        shadow.appendChild(this.mainDiv);\r\n        this.styleLink.rel = 'stylesheet';\r\n        this.styleLink.href = '/dist/css/userinf.css';\r\n        shadow.appendChild(this.styleLink);\r\n        this.mainDiv.appendChild(this.avatar);\r\n        this.mainDiv.appendChild(this.usernameDiv);\r\n        this.mainDiv.id = 'main-div';\r\n        this.avatar.id = 'avatar';\r\n        this.usernameDiv.id = 'username-div';\r\n    }\r\n    static get observedAttributes() {\r\n        return ['uid'];\r\n    }\r\n    attributeChangedCallback(name, oldVal, newVal) {\r\n        if (name == 'uid' && newVal) {\r\n            this.avatar.src = `/api/avatar/${newVal}`;\r\n            this.usernameDiv.href = `/user/${newVal}`;\r\n            this.avatar.onclick = () => {\r\n                location.href = `/user/${newVal}`;\r\n            };\r\n            query_user_1.queryUser({\r\n                queryName: Number(newVal),\r\n                queryCol: declarations_1.QUERY_USER_REQUEST_QUERY_COL_USERID,\r\n            }, '/api/user/query').then((res) => {\r\n                if (res.status == 'Success' && res.user) {\r\n                    this.usernameDiv.innerText = res.user.username;\r\n                }\r\n            });\r\n        }\r\n    }\r\n}\r\nexports.UserInfElement = UserInfElement;\r\ncustomElements.define('user-inf', UserInfElement);\r\n\n\n//# sourceURL=webpack:///./view/userinf.ts?");
+eval("\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\n__webpack_require__(/*! ../css/global.css */ \"./css/global.css\");\r\n\n\n//# sourceURL=webpack:///./view/index.js?");
 
 /***/ })
 

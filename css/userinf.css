@@ -1,8 +1,10 @@
-#main-div{
+@import './list_a.css';
+@import './button_a.css';
+.user-inf{
     display:flex;
     align-items:center;
 }
-#avatar{
+.user-inf .avatar{
     border-radius: 2px;
     height: 36px;
     width: 36px;

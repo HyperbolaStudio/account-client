@@ -4,7 +4,7 @@ a{
 a:hover{
     text-decoration-line: underline;
 }
-a{
+a.button{
     background-color: var(--back-color,black);
     padding:0.5em 1em;
     line-height: 2em;

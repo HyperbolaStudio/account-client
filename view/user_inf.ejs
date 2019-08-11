@@ -1,4 +1,4 @@
 <div class="user-inf">
     <img class="avatar" src="<%= `/api/avatar/${userInf.userid}`%>">
-    <div class="username"><%= `/api/avatar/${userInf.username}`%></div>
+    <a class="username list" href="<%= `/user/${userInf.userid}`%>"><%= userInf.username %></a>
 </div>

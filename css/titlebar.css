@@ -1,0 +1,33 @@
+@import './list_a.css';
+@import './button_a.css';
+.title-bar{
+    height:60px;
+    justify-content: space-between;
+    /* align-items: center; */
+    /* margin:8px; */
+    box-shadow: 0 0 4px;
+    border-radius: 0 0 8px 8px;
+}
+.title-bar .logo-img{
+    height:48px;
+}
+.title-bar,.title-bar .left-bar,.title-bar .right-bar,.title-bar .main-div,.title-bar ul,.title-bar .button-nav,.title-bar .users-part,.title-bar .loggedin-user-part{
+    display:flex;
+    align-items: center;
+}
+.title-bar ul>*:first-child{
+    margin-left:0;
+}
+.title-bar ul>*:last-child{
+    margin-right:0;
+}
+.title-bar .left-bar>*,.title-bar .right-bar>*,.title-bar ul>*,.title-bar .users-part>*,.title-bar .loggedin-user-part>*{
+    margin:0 8px;
+}
+.title-bar h1{
+    font-weight: 500;
+}
+.title-bar ul{
+    list-style-type: none;
+    padding: 0;
+}
