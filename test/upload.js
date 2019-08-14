@@ -1,0 +1,14 @@
+"use strict";
+var form = document.createElement('form');
+form.method = 'POST';
+form.enctype = 'multipart/form-data';
+form.action = '/api/upload_test';
+var input = document.createElement('input');
+input.type = 'file';
+input.name = 'file';
+var submit = document.createElement('input');
+submit.type = 'submit';
+form.appendChild(input);
+form.appendChild(submit);
+document.body.appendChild(form);
+form.style.paddingTop = '100px';

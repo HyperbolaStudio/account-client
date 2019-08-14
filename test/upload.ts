@@ -1,0 +1,13 @@
+let form = document.createElement('form');
+form.method = 'POST';
+form.enctype = 'multipart/form-data';
+form.action = '/api/upload_test';
+let input = document.createElement('input');
+input.type = 'file';
+input.name = 'file';
+let submit = document.createElement('input');
+submit.type = 'submit';
+form.appendChild(input);
+form.appendChild(submit);
+document.body.appendChild(form);
+form.style.paddingTop = '100px';
