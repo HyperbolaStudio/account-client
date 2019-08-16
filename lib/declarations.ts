@@ -151,3 +151,7 @@ export interface UserCoreInfUpdateRequest{
 export interface UserUpdateResponse extends AbstractResponse{
     status:StatusCollection.success|StatusCollection.invalid|StatusCollection.notLoggedIn|StatusCollection.unexpectedError;
 }
+export interface WhoamiResponse{
+    status:StatusCollection.success|StatusCollection.notLoggedIn|StatusCollection.unexpectedError;
+    userID:number;
+}
