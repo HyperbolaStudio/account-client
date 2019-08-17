@@ -566,7 +566,7 @@ eval("\r\nvar __awaiter = (this && this.__awaiter) || function (thisArg, _argume
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\r\nvar form = document.createElement('form');\r\nform.method = 'POST';\r\nform.enctype = 'multipart/form-data';\r\nform.action = '/api/upload_test';\r\nvar input = document.createElement('input');\r\ninput.type = 'file';\r\ninput.name = 'file';\r\nvar submit = document.createElement('input');\r\nsubmit.type = 'submit';\r\nform.appendChild(input);\r\nform.appendChild(submit);\r\ndocument.body.appendChild(form);\r\nform.style.paddingTop = '100px';\r\n\n\n//# sourceURL=webpack:///./test/upload.js?");
+eval("\r\nvar form = document.createElement('form');\r\nform.method = 'POST';\r\nform.enctype = 'multipart/form-data';\r\nform.action = '/api/avatar/update';\r\nvar input = document.createElement('input');\r\ninput.type = 'file';\r\ninput.name = 'avatar';\r\nvar ext = document.createElement('input');\r\next.type = 'text';\r\next.name = 'ext';\r\nvar submit = document.createElement('input');\r\nsubmit.type = 'submit';\r\nform.appendChild(input);\r\nform.appendChild(ext);\r\nform.appendChild(submit);\r\ndocument.body.appendChild(form);\r\nform.style.paddingTop = '100px';\r\n\n\n//# sourceURL=webpack:///./test/upload.js?");
 
 /***/ }),
 

@@ -155,3 +155,6 @@ export interface WhoamiResponse{
     status:StatusCollection.success|StatusCollection.notLoggedIn|StatusCollection.unexpectedError;
     userID:number;
 }
+export interface UpdateAvatarResponse{
+    status:StatusCollection.success|StatusCollection.invalid|StatusCollection.notLoggedIn|StatusCollection.unexpectedError;
+}
