@@ -158,3 +158,8 @@ export interface WhoamiResponse{
 export interface UpdateAvatarResponse{
     status:StatusCollection.success|StatusCollection.invalid|StatusCollection.notLoggedIn|StatusCollection.unexpectedError;
 }
+export interface DescriptionAndTagQueryResponse{
+    status:StatusCollection.success|StatusCollection.userNotFound|StatusCollection.unexpectedError|StatusCollection.invalid;
+    description?:string;
+    tag?:string;
+}
